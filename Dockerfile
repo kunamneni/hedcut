@@ -2,7 +2,8 @@ FROM continuumio/anaconda3
 
 RUN conda update -y -n base -c defaults conda
 RUN conda create -y -n hedcut
-RUN conda activate hedcut && \
+RUN conda init bash && \
+    conda activate hedcut && \
     conda install -y -c conda-forge opencv && \
     conda install -y -c anaconda progressbar2 && \
     conda install -y -c conda-forge tensorflow && \
