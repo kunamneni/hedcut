@@ -2,8 +2,8 @@ FROM continuumio/anaconda3
 
 RUN conda update -y -n base -c defaults conda
 RUN conda create -y -n hedcut
-RUN echo $SHELL && \
-    conda init bash && \
+RUN conda init bash
+RUN . /opt/conda/etc/profile.d/conda.sh && \
     conda activate hedcut && \
     conda install -y -c conda-forge opencv && \
     conda install -y -c anaconda progressbar2 && \
